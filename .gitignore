@@ -1,0 +1,5 @@
+op_scan
+soloLeveling_scan
+geckodriver.log
+.DS_Store
+__pycache__
