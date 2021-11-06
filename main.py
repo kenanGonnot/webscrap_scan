@@ -60,7 +60,7 @@ def zip_chapters(scan_dir):
     # Zip all chapters
     all_chapters = next(os.walk(scan_dir))[1]
     all_chapters = filter(lambda x: x != "zip", all_chapters)
-    zip_output = scan_dir + "zip/"
+    zip_output = "./" + scan_dir + "/zip/"
     Path(zip_output).mkdir(parents=True, exist_ok=True)
     for chapter_dir in all_chapters:
         full_chapter_dir = scan_dir + chapter_dir
@@ -71,11 +71,15 @@ def zip_chapters(scan_dir):
 
 if __name__ == "__main__":
     print("Go go")
-    # scan_dir = './op_scan/'
+    scan_dir = 'op_scan'
+    # scan_dir = './jujutsu_kaisen/'
     # scan_dir = "./soloLeveling_scan/"
-    scan_dir = "./one_punch_man/"
+    # scan_dir = "one_punch_man"
     # scan = get_scan("https://www.scan-vf.net/one_piece/chapitre-1000", "op_scan",
     #                 "https://www.scan-vf.net/one_piece/chapitre-1000.5")
+    scan = get_scan("https://www.scan-vf.net/one_piece/chapitre-1023", scan_dir)
+    # scan = get_scan("https://www.scan-vf.net/jujutsu-kaisen/chapitre-112", scan_dir)
+
     # scan = get_scan("https://www.scan-vf.net/solo-leveling/chapitre-113", scan_dir)
-    # scan = get_scan("https://www.scan-vf.net/one-punch-man/chapitre-173", scan_dir)
-    zip_chapters(scan_dir)
+    # scan = get_scan("https://www.scan-vf.net/one-punch-man/chapitre-93", scan_dir)
+    # zip_chapters(scan_dir)
